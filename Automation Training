@@ -1,0 +1,175 @@
+import datetime
+from time import sleep
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
+from Infrastructure.Utilities.base import BaseTestMixin, exception_handler
+from Test_Suites.Tests.test_authentication.test_logIn_premium import TestLoginTestEmail
+from Test_Suites.Tests.test_creator.test_creator import TestCreator
+
+
+class TestCreateCourse(TestLoginTestEmail, BaseTestMixin):
+    longMessage = False
+
+    def test_click_create(self):
+        self.test_email_login()
+        click_create = self.driver.find_element_by_xpath('//div[@id="createContainer"]')
+        click_create.click()
+        sleep(4)
+
+    # def test_click_create_course(self):
+        click_create_course = self.driver.find_element_by_xpath("//div[@class='create-course-container']//div")
+        click_create_course.click()
+
+    # def test_click_course_name(self):
+        click_create_course_name = self.driver.find_element_by_xpath('//input[@id="id_name"]')
+        click_create_course_name.click()
+        sleep(4)
+
+    # def test_go_back_to_market(self):
+        click_back = self.driver.find_element_by_xpath("//*[@id='logoCont']/div")
+        click_back.click()
+        sleep(5)
+
+    # def test_click_menu(self)
+        click_menu = self.driver.find_element_by_xpath('//*[@id="profileContainer"]')
+        click_menu.click()
+        sleep(5)
+
+    # def test_click_upgrade
+        click_upgrade = self.driver.find_element_by_xpath('//*[@id="upgradeMenuItem"]/a')
+        click_upgrade.click()
+        sleep(3)
+
+    # def test_go_back_to_market(self):
+        click_back = self.driver.find_element_by_xpath('//*[@id="img_comp-kzdxwa7o"]/img')
+        click_back.click()
+        sleep(5)
+
+    # def test_click_menu(self)
+        click_menu = self.driver.find_element_by_xpath('//*[@id="profileContainer"]')
+        click_menu.click()
+        sleep(5)
+
+    # def test_click_account_settings(self):
+        click_account_settings = self.driver.find_element_by_xpath('//*[@id="accountDropDown"]/ul/li[4]/a')
+        click_account_settings.click()
+        sleep(4)
+
+    # def test_click_subscription(self)
+        click_subscription = self.driver.find_element_by_xpath('//*[@id="Subscription"]/div/a')
+        click_subscription.click()
+        sleep(5)
+
+    # def test_click_notifications(self):
+        click_notifications = self.driver.find_element_by_xpath('//*[@id="Email"]/div/a')
+        click_notifications.click()
+        sleep(4)
+
+    # def test_click_back_to_market(self):
+        click_back_to_market = self.driver.find_element_by_xpath("//*[@id='logoCont']/div")
+        click_back_to_market.click()
+        sleep(4)
+
+    # def test_click_menu(self):
+        click_click_menu = self.driver.find_element_by_xpath('//*[@id="profileContainer"]')
+        click_click_menu.click()
+        sleep(4)
+
+    # def test_click_analytics(self):
+        click_click_analytics = self.driver.find_element_by_xpath('//*[@id="accountDropDown"]/ul/li[5]/a')
+        click_click_analytics.click()
+        sleep(4)
+
+    # def test_click_sales(self):
+        click_click_sales = self.driver.find_element_by_xpath('//*[@id="Sales"]/div/a')
+        click_click_sales.click()
+        sleep(4)
+
+    # def test_click_payments(self):
+        click_click_payments = self.driver.find_element_by_xpath('//*[@id="Payments"]/div/a')
+        click_click_payments.click()
+        sleep(4)
+
+    # def test_click_menu(self):
+        click_click_menu = self.driver.find_element_by_xpath('//*[@id="profileContainer"]')
+        click_click_menu.click()
+        sleep(10)
+
+    # def test_click_insights(self):
+        click_click_insights = self.driver.find_element_by_xpath('//*[@id="accountDropDown"]/ul/li[6]/a')
+        click_click_insights.click()
+        sleep(4)
+
+    # def test_click_menu(self):
+        click_click_menu = self.driver.find_element_by_xpath('//*[@id="profileContainer"]')
+        click_click_menu.click()
+        sleep(10)
+
+    # def test_click_courses(self):
+        click_click_courses = self.driver.find_element_by_xpath('//*[@id="accountDropDown"]/ul/li[7]/a')
+        click_click_courses.click()
+        sleep(4)
+
+    # def test_click_menu(self):
+        click_click_menu = self.driver.find_element_by_xpath('//*[@id="logoCont"]')
+        click_click_menu.click()
+        sleep(10)
+
+    # def test_click_classes(self):
+        click_click_classes = self.driver.find_element_by_xpath('//*[@id="accountDropDown"]/ul/li[8]/a')
+        click_click_classes.click()
+        sleep(4)
+
+    # def test_click_back_to_market(self):
+        click_back_to_market = self.driver.find_element_by_xpath('//*[@id="logoCont"]/div/img[1]')
+        click_back_to_market.click()
+        sleep(4)
+
+    # def test_click_on_game(self):
+        click_back_on_game = self.driver.find_element_by_xpath('//*[@id="168213"]/div/a[1]/img')
+        click_back_on_game.click()
+        sleep(10)
+
+    # def test_click_on_playButton(self):
+        frame = self.driver.find_element_by_id("webplayer")
+        self.driver.switch_to.frame(frame)
+        sleep(5)
+        playBtn = self.driver.find_element_by_css_selector(".playButton")
+        playBtn.click()
+        sleep(5)
+        navOpener = self.driver.find_element_by_id("navOpener")
+        navOpener.click()
+
+        self.driver.switch_to.default_content()
+        sleep(2)
+
+    # def test_click_on_playButton(self):
+        next_game = self.driver.find_element_by_css_selector(".relatedContainer .albumImage a")
+        next_game.click()
+        sleep(10)
+
+        # def test_click_on_playButton(self):
+        frame = self.driver.find_element_by_id("webplayer")
+        self.driver.switch_to.frame(frame)
+        sleep(5)
+        playBtn = self.driver.find_element_by_css_selector(".playButton")
+        playBtn.click()
+        sleep(5)
+        navOpener = self.driver.find_element_by_id("navOpener")
+        navOpener.click()
+
+        self.driver.switch_to.default_content()
+        sleep(2)
+
+    # def test_go_back_to_market(self):
+        click_back = self.driver.find_element_by_xpath("//*[@id='logoCont']/div")
+        click_back.click()
+        sleep(5)
+
+
+    @exception_handler
+    def test_create_course(self):
+        self.test_email_login()
+
+
+
