@@ -2,9 +2,7 @@ from time import sleep
 import random
 from selenium.common import NoAlertPresentException
 from selenium.webdriver import Keys, ActionChains
-from Utilities.base import Base
 
-#blahhhhhhh
 class SignUp(Base):
 
     # click on sing up button
